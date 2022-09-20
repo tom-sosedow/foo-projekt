@@ -12,6 +12,7 @@ jobs:
             # change tokens here (and in line 32) if you want to use a differently named folder 
             run: 'mkdir -p tokens'
           # this creates a json file from the stringified json from the request body
+          - run: echo "${{ github.event }}"
           - name: create json from request body
             id: create-json
             uses: jsdaniell/create-json@1.1.2
@@ -21,12 +22,9 @@ jobs:
               # it uses the json string that was send as the tokens parameter
               json: ${{ github.event.client_payload.tokens }}
               # it uses the directory named "tokens" to store this json file (change this if you changed it above to use a different folder)
-              dir: 'tokens'
+              dir: 'tokens/'
           - name: Setup Node.js environment
             uses: actions/setup-node@v2.4.0
-          - run: ls
-          - run: cd tokens
-          - run: ls
           - run: npm i -g npm && npm i --save lodash
           # Convert tokens according to Style Dictionary config
           - run: npx style-dictionary build --config config.js
