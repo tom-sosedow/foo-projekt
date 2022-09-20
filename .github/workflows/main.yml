@@ -24,7 +24,9 @@ jobs:
               dir: 'tokens'
           - name: Setup Node.js environment
             uses: actions/setup-node@v2.4.0
-          - run: echo "${{ github.event }}"
+          - run: ls
+          - run: cd tokens
+          - run: ls
           - run: npm i -g npm && npm i --save lodash
           # Convert tokens according to Style Dictionary config
           - run: npx style-dictionary build --config config.js
