@@ -9,6 +9,10 @@ jobs:
     steps:
           - uses: actions/checkout@v2
           # this creates a json file from the stringified json from the request body
+          - env:
+              MESSAGE: ${{ github.event }}
+            run: echo $MESSAGE
+          - run: mkdir -p tokens
           - name: create json from request body
             id: create-json
             uses: jsdaniell/create-json@1.1.2
@@ -17,6 +21,7 @@ jobs:
               name: 'design-tokens-example.json'
               # it uses the json string that was send as the tokens parameter
               json: ${{ github.event.client_payload.tokens }}
+              dir: 'tokens/'
           - run: ls
           - run: cat design-tokens-example.json
           - name: Setup Node.js environment
