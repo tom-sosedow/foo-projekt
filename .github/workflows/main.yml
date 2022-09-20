@@ -12,7 +12,6 @@ jobs:
             # change tokens here (and in line 32) if you want to use a differently named folder 
             run: 'mkdir -p tokens'
           # this creates a json file from the stringified json from the request body
-          - run: echo "${github.event}"
           - name: create json from request body
             id: create-json
             uses: jsdaniell/create-json@1.1.2
