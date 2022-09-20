@@ -23,7 +23,7 @@ jobs:
               json: ${{ github.event.client_payload.tokens }}
               dir: 'tokens/'
           - run: ls
-          - run: cat design-tokens-example.json
+          - run: cat tokens/design-tokens-example.json
           - name: Setup Node.js environment
             uses: actions/setup-node@v2.4.0
           - run: npm i -g npm && npm i --save lodash
