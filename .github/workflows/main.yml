@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-          - uses: actions/checkout@v2
+          - uses: actions/checkout@v3
           - name: create json from request body
             uses: jsdaniell/create-json@1.1.2
             with:
@@ -23,6 +23,11 @@ jobs:
           - name:  Convert tokens according to Style Dictionary config
             run: npx style-dictionary build --config config.js
           - name: Add files that were created during a run, e.g. created files from style dictionary.
-            uses: stefanzweifel/git-auto-commit-action@v4
+            uses: peter-evans/create-pull-request@v4
             with:
-              commit_message: Update Tokens
+              branch: design-tokens-update
+              title: Update Design Tokens
+              body: |
+                Design tokens were updated in Figma
+                Please review changes
+              reviewers: tom-sosedow
