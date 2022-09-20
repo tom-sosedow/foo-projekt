@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
           - uses: actions/checkout@v2
-          # this creates a json file from the stringified json from the request body
           - name: create json from request body
-            id: create-json
             uses: jsdaniell/create-json@1.1.2
             with:
               # it uses the name from your settings that was send as then tokenFileName parameter
@@ -20,10 +18,11 @@ jobs:
               dir: 'tokens/'
           - name: Setup Node.js environment
             uses: actions/setup-node@v2.4.0
-          - run: npm i -g npm && npm i --save lodash
-          # Convert tokens according to Style Dictionary config
-          - run: npx style-dictionary build --config config.js
-          # Add files that were created during a run, e.g. created files from style dictionary.
-          - uses: stefanzweifel/git-auto-commit-action@v4
+          - name: Install npm and dependencies
+            run: npm i -g npm && npm i --save lodash
+          - name:  Convert tokens according to Style Dictionary config
+            run: npx style-dictionary build --config config.js
+          - name: Add files that were created during a run, e.g. created files from style dictionary.
+            uses: stefanzweifel/git-auto-commit-action@v4
             with:
               commit_message: Update Tokens
