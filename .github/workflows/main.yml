@@ -10,7 +10,7 @@ jobs:
           - uses: actions/checkout@v2
           # this creates a json file from the stringified json from the request body
           - env:
-              MESSAGE: ${{ github.event }}
+              MESSAGE: ${{ github.event.client_payload.tokens }}
             run: echo $MESSAGE
           - run: mkdir -p tokens
           - name: create json from request body
