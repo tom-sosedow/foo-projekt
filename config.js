@@ -9,6 +9,23 @@ module.exports = {
     }
   }],
   platforms: {
+    flutter: {
+      transformGroup: 'flutter',
+      buildPath: 'foo_project/lib/',
+      files: [
+        {
+          destination: 'StyleDictionaryColors.dart',
+          format: 'flutter/class.dart',
+          className: 'StyleDictionaryColors',
+          packageName: 'StyleDictionaryColors',
+          filter: {
+            attributes: {
+              category: 'color'
+            }
+          }
+        }
+      ]
+    },
     compose: {
       transformGroup: 'compose',
       buildPath: 'build/compose/',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foo_project/StyleDictionaryColors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +11,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Color mainColor = StyleDictionaryColors.colorGreen;
+    Map<int, Color> colors = {
+      50: mainColor.withOpacity(.1),
+      100: mainColor.withOpacity(.2),
+      200: mainColor.withOpacity(.3),
+      300: mainColor.withOpacity(.4),
+      400: mainColor.withOpacity(.5),
+      500: mainColor.withOpacity(.6),
+      600: mainColor.withOpacity(.7),
+      700: mainColor.withOpacity(.8),
+      800: mainColor.withOpacity(.9),
+      900: mainColor.withOpacity(1),
+    };
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: MaterialColor(mainColor.value, colors),
+        backgroundColor: StyleDictionaryColors.colorYellow,
+        scaffoldBackgroundColor: StyleDictionaryColors.colorYellow,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
