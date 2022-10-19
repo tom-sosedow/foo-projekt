@@ -16,6 +16,7 @@ jobs:
               # it uses the json string that was send as the tokens parameter
               json: ${{ github.event.client_payload.tokens }}
               dir: 'tokens/'
+          - run: cat tokens/design-tokens-example.json
           - name: Setup Node.js environment
             uses: actions/setup-node@v2.4.0
           - name: Install npm and dependencies
