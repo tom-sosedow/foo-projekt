@@ -1,7 +1,7 @@
 
 
 // Do not edit directly
-// Generated on Fri, 28 Oct 2022 06:43:03 GMT
+// Generated on Fri, 28 Oct 2022 13:57:50 GMT
 
 
 
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
 object StyleDictionaryColor {
-  val colorBackground = Color(0xffffffff)
+  val colorBackground = Color(0xff2f2f2f)
   val colorCyan = Color(0xff1ce6ff)
   val colorDarkgrey = Color(0xff2f2f2f)
   val colorFontDark = Color(0xff101010)
