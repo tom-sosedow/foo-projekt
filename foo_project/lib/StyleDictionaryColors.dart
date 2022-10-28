@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly
-// Generated on Fri, 28 Oct 2022 06:43:03 GMT
+// Generated on Fri, 28 Oct 2022 13:57:50 GMT
 
 
 
@@ -13,7 +13,7 @@ import 'dart:ui';
 class StyleDictionaryColors {
   StyleDictionaryColors._();
 
-    static const colorBackground = Color(0xFFFFFFFF);
+    static const colorBackground = Color(0xFF2F2F2F);
     static const colorCyan = Color(0xFF1CE6FF);
     static const colorDarkgrey = Color(0xFF2F2F2F);
     static const colorFontDark = Color(0xFF101010);
